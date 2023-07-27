@@ -22,6 +22,10 @@ class MainActivity : ComponentActivity() {
 
     private lateinit var mqttManager: MQTTManager
 
+    /**
+     *
+     * En ocasiones la aplicación demora en iniciar, esto se debe a que se esta conectando
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

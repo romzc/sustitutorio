@@ -59,6 +59,9 @@ class MQTTManager(
 
             // Crear el cliente MQTT y establecer la conexión
             mqttClient = MqttClient(mqttServerUri, clientId, MemoryPersistence())
+
+
+
             mqttClient.connect(connectionOptions)
 
             // nos suscribimos para escuchar respuestas.
@@ -85,6 +88,7 @@ class MQTTManager(
     }
 
     private fun subscribeTopic() {
+        //val responseTopic = "mobile/test"
         if (mqttClient.isConnected) {
             mqttClient.subscribe(topic, qos) { _, message ->
                 val mess = message.payload.toString(Charsets.UTF_8)
